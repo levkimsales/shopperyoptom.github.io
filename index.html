@@ -1,1 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PMR BLVNK · шопперы оптом</title>
+    <!-- мягкий шрифт, похожий на comic sans, но чуть чище -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background-color: #fefaf5;   /* очень светлый тёплый тон */
+            font-family: 'Patrick Hand', 'Comic Sans MS', 'Quicksand', cursive, sans-serif;
+            color: #3a2e2a;
+            line-height: 1.4;
+            padding: 24px 20px 40px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 48px 48px 36px 36px;
+            padding: 32px 28px 40px;
+            box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.05), 0 6px 10px -4px rgba(241, 158, 176, 0.12);
+            border: 1px solid #fff4f0;
+        }
+
+        /* все заголовки/текст — мягкие, округлые */
+        h1, h2, h3, h4 {
+            font-family: 'Patrick Hand', 'Quicksand', cursive;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #4d3a32;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 3px dashed #fbc4d5;
+            display: inline-block;
+        }
+
+        /* ----- шапка (header) ----- */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            background: #fff9fc;
+            padding: 14px 22px;
+            border-radius: 120px;
+            box-shadow: 0 4px 12px rgba(249, 168, 192, 0.1);
+            border: 1px solid #ffe2ec;
+        }
+
+        .logo {
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: #3f2e28;
+            background: #ffeef3;
+            padding: 4px 22px;
+            border-radius: 100px;
+            box-shadow: inset 0 1px 3px #ffffff, 0 4px 8px #fecfd9;
+            letter-spacing: -0.3px;
+            backdrop-filter: blur(4px);
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: #b15e7a;
+            margin: 0 6px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 14px;
+        }
+
+        .soft-btn {
+            background: #ffe4ec;
+            border: none;
+            padding: 14px 26px;
+            border-radius: 60px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.5rem;
+            color: #593c47;
+            box-shadow: 0 6px 0 #e2aebb, 0 6px 12px rgba(233, 150, 172, 0.18);
+            cursor: default;  /* шаблон, кнопки не активны */
+            transition: all 0.1s ease;
+            border: 1px solid #ffd9e2;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .soft-btn.small {
+            padding: 10px 22px;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 0 #d9a5b6, 0 4px 10px #fec7d6;
+        }
+
+        /* главная картинка placeholder */
+        .hero-placeholder {
+            background: linear-gradient(145deg, #fee9ef, #ffdae3);
+            width: 100%;
+            aspect-ratio: 16 / 7;
+            border-radius: 40px;
+            margin: 30px 0 42px;
+            box-shadow: inset 0 2px 8px #ffeef3, 0 18px 28px -10px #fec1cf;
+            border: 2px solid #ffe2ec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-placeholder::before {
+            content: "🛍️✨";
+            font-size: 5rem;
+            opacity: 0.5;
+            color: #b36b82;
+        }
+
+        /* сетка товаров 7 окон 3:4 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px 18px;
+            margin: 28px 0 40px;
+        }
+
+        .product-card {
+            background: #fffbfd;
+            border-radius: 32px;
+            padding: 18px 12px 16px;
+            box-shadow: 0 10px 0 #fbc9d8, 0 14px 20px -8px #fecfde;
+            border: 1px solid #ffdce7;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(4px);
+            transition: transform 0.15s;
+        }
+
+        .product-image {
+            background: #ffeef4;
+            flex: 1;
+            border-radius: 24px;
+            margin-bottom: 14px;
+            box-shadow: inset 0 0 0 1px #ffe2ea, 0 8px 0 #eec2cf;
+            border: 1px solid white;
+            background-image: radial-gradient(circle at 30% 25%, #ffeef1 2%, #fccfd9 90%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            color: #ac7284;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            padding-left: 4px;
+            color: #402e32;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 1.2rem;
+            color: #7b5b64;
+            padding: 0 4px;
+        }
+
+        .price-placeholder {
+            background: #fce2ea;
+            padding: 6px 10px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            box-shadow: inset 0 1px 4px white, 0 3px 0 #d9b2be;
+        }
+
+        /* таблица услуг (брендирование) */
+        .services-section {
+            margin: 50px 0 40px;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            font-size: 1.4rem;
+            background: transparent;
+        }
+
+        .price-table th {
+            text-align: left;
+            padding: 16px 12px 8px 12px;
+            font-weight: 500;
+            color: #6a4452;
+            font-size: 1.5rem;
+            border-bottom: 2px dashed #f3bccc;
+        }
+
+        .price-table td {
+            background: #fff9fb;
+            padding: 16px 12px;
+            border-radius: 28px;
+            box-shadow: inset 0 1px 5px white, 0 5px 0 #efc2d0, 0 6px 12px #fad3e0;
+            border: 1px solid #ffe2eb;
+            backdrop-filter: blur(4px);
+            font-size: 1.3rem;
+        }
+
+        .price-table tr td:first-child {
+            font-weight: 500;
+            color: #3a262d;
+        }
+
+        /* примеры брендирования 10 шт 1:1 */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin: 30px 0 40px;
+        }
+
+        .example-square {
+            aspect-ratio: 1 / 1;
+            background: #ffecf1;
+            border-radius: 30px;
+            box-shadow: inset 0 2px 8px #fff0f5, 0 9px 0 #eebecd, 0 10px 18px #fbcbd9;
+            border: 1px solid #ffe3ec;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #c28195;
+            background: radial-gradient(circle at 70% 20%, #fff6f9, #fdd9e3);
+        }
+
+        /* контакты и адрес */
+        .contact-block {
+            margin: 48px 0 20px;
+            background: #fff4f8;
+            padding: 28px 30px;
+            border-radius: 60px;
+            box-shadow: inset 0 2px 6px #ffffff, 0 10px 0 #f2c1d1, 0 12px 18px -8px #f3becf;
+            border: 1px solid #ffe6ed;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px 60px;
+            align-items: baseline;
+        }
+
+        .contact-item {
+            font-size: 1.8rem;
+            background: #ffeef2;
+            padding: 8px 32px;
+            border-radius: 60px;
+            box-shadow: inset 0 1px 5px #fff, 0 4px 0 #dcb3c2;
+            color: #4b313b;
+            letter-spacing: 0.5px;
+        }
+
+        .address {
+            margin-top: 24px;
+            font-size: 1.7rem;
+            padding: 16px 28px;
+            background: #fff2f0;
+            border-radius: 48px;
+            box-shadow: inset 0 1px 6px white, 0 6px 0 #dfb8c5;
+            color: #3f2b32;
+            border: 1px solid #ffdbdf;
+        }
+
+        /* декоративные шейдеры */
+        .soft-shade {
+            transition: all 0.2s;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #fecfdb, transparent);
+            margin: 20px 0;
+        }
+
+        /* адаптив */
+        @media (max-width: 700px) {
+            .page { padding: 20px 14px; }
+            .logo { font-size: 1.8rem; }
+            .soft-btn { font-size: 1.2rem; padding: 10px 16px; }
+            .examples-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 500px) {
+            .header { flex-direction: column; gap: 15px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-row { flex-direction: column; gap: 16px; }
+        }
+
+        /* шаблонные заполнители (без выдуманных данных) */
+        .placeholder-text {
+            opacity: 0.75;
+        }
+
+        /* таблица взята из документа (брендирование) */
+        .highlight-from-doc {
+            background: #fdefef;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 1) Шапка сайта (PMR BLVNK / Шопперы Оптом) + кнопки номер/телеграм (шаблон) -->
+    <div class="header">
+        <div class="logo">
+            PMR BLVNK <span>/</span> Шопперы Оптом
+        </div>
+        <div class="header-actions">
+            <div class="soft-btn small">📞 +7 ··· ··· ·· ··</div>
+            <div class="soft-btn small">✈️ @telegram</div>
+        </div>
+    </div>
+
+    <!-- Окно для главной картинки без подписи -->
+    <div class="hero-placeholder"></div>
+
+    <!-- 2) 7 окон 3:4 для товара (шаблон, данные из задания, но без выдуманных цифр — шаблон цены) -->
+    <h2>✨ шопперы · база</h2>
+    <div class="product-grid">
+        <!-- Шоппер Бежевый / Саржа -->
+        <div class="product-card">
+            <div class="product-image">👜</div>
+            <div class="product-title">Бежевый / Саржа</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+        <!-- Шоппер Белый / Саржа -->
+        <div class="product-card">
+            <div class="product-image">🤍</div>
+            <div class="product-title">Белый / Саржа</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+        <!-- Шоппер Черный / Саржа -->
+        <div class="product-card">
+            <div class="product-image">🖤</div>
+            <div class="product-title">Черный / Саржа</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+        <!-- Шоппер Синий / Саржа -->
+        <div class="product-card">
+            <div class="product-image">💙</div>
+            <div class="product-title">Синий / Саржа</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+        <!-- Шоппер Темно-синий / Саржа -->
+        <div class="product-card">
+            <div class="product-image">🌌</div>
+            <div class="product-title">Темно-синий / Саржа</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+        <!-- Шоппер Серый Двунитка / Саржа -->
+        <div class="product-card">
+            <div class="product-image">🩶</div>
+            <div class="product-title">Серый Двунитка</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+        <!-- Шоппер Бежевый Диагональ / Саржа -->
+        <div class="product-card">
+            <div class="product-image">🧶</div>
+            <div class="product-title">Бежевый Диагональ</div>
+            <div class="product-meta">
+                <span>40×34</span>
+                <span class="price-placeholder">⋯ ₽</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3) Таблица с ценами на услуги брендирования (из документа) -->
+    <div class="services-section">
+        <h2>🎨 брендирование · DTF</h2>
+        <table class="price-table">
+            <thead>
+                <tr><th>Услуга / размер</th><th>1–300 шт</th><th>300–500 шт</th><th>500–1000 шт</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Нанесение DTF 10×10 см</td><td>60 ₽</td><td>50 ₽</td><td>40 ₽</td></tr>
+                <tr><td>Нанесение DTF 15×15 см</td><td>80 ₽</td><td>75 ₽</td><td>70 ₽</td></tr>
+                <tr><td>Нанесение DTF 20×20 см</td><td>100 ₽</td><td>90 ₽</td><td>80 ₽</td></tr>
+                <tr><td>Нанесение DTF 25×25 см</td><td>120 ₽</td><td>100 ₽</td><td>95 ₽</td></tr>
+                <tr><td>Нанесение DTF A4 (21×30)</td><td>150 ₽</td><td>140 ₽</td><td>130 ₽</td></tr>
+                <tr><td>Нанесение DTF A3 (30×42)</td><td>250 ₽</td><td>230 ₽</td><td>220 ₽</td></tr>
+                <tr><td>Перенос на шопперы/ровную поверхность</td><td>50 ₽</td><td>40 ₽</td><td>35 ₽</td></tr>
+                <tr><td>Сложный перенос (нестанд. места)</td><td>100 ₽</td><td>80 ₽</td><td>70 ₽</td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top: 10px; font-size:1.3rem; background: #ffe6ed; padding: 8px 22px; border-radius: 60px; display: inline-block; box-shadow: inset 0 1px 5px #fff,0 3px 0 #e0b7c5;">
+            DTF-рулон (опт): от 550 ₽/м
+        </div>
+    </div>
+
+    <!-- 4) 10 окон примеров брендирования 1:1 (5 сверху, 5 снизу) -->
+    <h2>🖼️ примеры брендирования</h2>
+    <div class="examples-grid">
+        <div class="example-square">🎯</div>
+        <div class="example-square">🌸</div>
+        <div class="example-square">🪽</div>
+        <div class="example-square">🌟</div>
+        <div class="example-square">🧸</div>
+        <div class="example-square">☕</div>
+        <div class="example-square">🍃</div>
+        <div class="example-square">🪄</div>
+        <div class="example-square">🫧</div>
+        <div class="example-square">✨</div>
+    </div>
+
+    <!-- 5) Контактные данные (шаблон, без выдуманной информации) -->
+    <div class="contact-block">
+        <div class="contact-row">
+            <div class="contact-item">📞 номер телефона</div>
+            <div class="contact-item">✈️ телеграм @······</div>
+        </div>
+        <!-- 6) Адрес предприятия (шаблон) -->
+        <div class="address">
+            📍 адрес предприятия · город, улица, строение
+        </div>
+    </div>
+
+    <!-- крошечная декоративная плашка, подчеркивающая стиль -->
+    <div style="display: flex; justify-content: flex-end; margin-top: 16px; opacity:0.5;">
+        <span style="background: #ffeef4; padding:6px 24px; border-radius: 50px; font-size:1.2rem; box-shadow: inset 0 1px 5px white;">PMR BLVNK · опт</span>
+    </div>
+</div>
+
+<!-- лёгкие комментарии: дизайн минималистичный, светлый, розовые акценты, шейдеры через box-shadow, шрифт мягкий -->
+</body>
+</html>
