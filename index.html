@@ -13,137 +13,136 @@
         }
 
         body {
-            background: #fefaf0;
+            background: #f5f5f5;
             font-family: 'Inter', 'Manrope', sans-serif;
-            color: #2c2418;
+            color: #1a1a1a;
             line-height: 1.45;
-            padding: 20px 18px 36px;
+            padding: 24px 20px 48px;
             -webkit-font-smoothing: antialiased;
-            transition: background 0.25s ease, color 0.2s;
         }
 
-        /* ----- ТЁМНАЯ ТЕМА ----- */
+        /* ----- ТЁМНАЯ ТЕМА (чисто белая/темная) ----- */
         body.dark {
-            background: #12100c;
-            color: #f0e6d8;
+            background: #0a0a0a;
+            color: #e8e8e8;
         }
         body.dark .page {
-            background: #1a1712;
-            border-color: #4a3e2a;
-            box-shadow: 0 20px 36px -12px rgba(0,0,0,0.6);
+            background: #111111;
+            border-color: #2a2a2a;
+            box-shadow: 0 20px 36px -12px rgba(0,0,0,0.5);
         }
         body.dark .header {
-            background: #1f1b14;
-            border-bottom-color: #4a3e2a;
+            background: #0d0d0d;
+            border-bottom-color: #2a2a2a;
         }
         body.dark .logo {
-            color: #f5e2b0;
-            border-right-color: #5c4a2e;
+            color: #ffffff;
+            border-right-color: #333;
         }
         body.dark .premium-btn {
-            background: #2a241a;
-            border-color: #5c4a2e;
-            color: #f5e2b0;
+            background: #1a1a1a;
+            border-color: #333;
+            color: #e0e0e0;
         }
         body.dark .hero-premium {
-            background: #1f1a10;
-            border-color: #5c4a2e;
+            background: #1a1a1a;
+            border-color: #333;
         }
         body.dark .hero-premium::before {
-            color: #c9a53b;
+            color: #888;
         }
         body.dark .product-card, body.dark .tshirt-card {
-            background: #1e1a12;
-            border-color: #4a3d24;
+            background: #161616;
+            border-color: #2c2c2c;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         body.dark .product-image, body.dark .tshirt-image {
-            background: #16130c;
-            border-color: #4a3d24;
-            color: #d4a83a;
+            background: #0f0f0f;
+            border-color: #2c2c2c;
+            color: #aaa;
         }
         body.dark .product-title, body.dark .tshirt-title {
-            color: #f5e2b0;
+            color: #f0f0f0;
         }
         body.dark .price-tiers-vertical, body.dark .tshirt-price {
-            background: #1e1910;
-            border-color: #4a3d24;
+            background: #0f0f0f;
+            border-color: #2c2c2c;
         }
         body.dark .tier-label, body.dark .price-label {
-            color: #e6c87a;
+            color: #bbbbbb;
         }
         body.dark .tier-price, body.dark .tshirt-price-value {
-            background: #2a2418;
-            color: #f5e2b0;
+            background: #222;
+            color: #ffffff;
         }
         body.dark .price-table th {
-            color: #e6c87a;
-            border-bottom-color: #5c4a2e;
+            color: #dddddd;
+            border-bottom-color: #444;
         }
         body.dark .price-table td {
-            border-bottom-color: #3a2e1c;
-            color: #e6d8c4;
+            border-bottom-color: #2a2a2a;
+            color: #cccccc;
         }
         body.dark .table-caption {
-            color: #e6c87a;
+            color: #dddddd;
         }
         body.dark .highlight-note {
-            background: #1e1910;
-            border-color: #5c4a2e;
-            color: #f0d894;
+            background: #1a1a1a;
+            border-color: #444;
+            color: #cccccc;
         }
         body.dark .example-square {
-            background: #1a160e;
-            border-color: #5c4a2e;
-            color: #d4a83a;
+            background: #1a1a1a;
+            border-color: #333;
+            color: #aaa;
         }
         body.dark .contact-block {
-            background: #1a160e;
-            border-color: #5c4a2e;
+            background: #1a1a1a;
+            border-color: #333;
         }
         body.dark .contact-item {
-            border-bottom-color: #5c4a2e;
-            color: #f0d894;
+            border-bottom-color: #444;
+            color: #e0e0e0;
         }
         body.dark .address {
-            border-top-color: #5c4a2e;
-            color: #d4c094;
+            border-top-color: #333;
+            color: #aaaaaa;
         }
         body.dark .footer-note {
-            color: #a88f50;
+            color: #777;
         }
         body.dark .card-table-wrapper {
-            background: #1a160e;
-            border-color: #5c4a2e;
+            background: #1a1a1a;
+            border-color: #333;
         }
 
-        /* главный контейнер — увеличены отступы */
+        /* главный контейнер — максимальная ширина с центрированием */
         .page {
-            max-width: 1440px;
+            max-width: 1400px;
             margin: 0 auto;
             background: #ffffff;
-            border-radius: 24px;
-            padding: 32px 40px 48px;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
-            border: 1px solid #f5e6c8;
+            border-radius: 28px;
+            padding: 36px 48px 48px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eeeeee;
             transition: background 0.2s, border 0.2s;
-            overflow-x: visible;
         }
 
         h2 {
             font-family: 'Manrope', 'Inter', sans-serif;
             font-weight: 500;
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             letter-spacing: -0.3px;
-            margin-bottom: 28px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #f0d894;
+            margin-bottom: 32px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
             display: inline-block;
             text-transform: uppercase;
-            color: #b8860b;
+            color: #222;
         }
         body.dark h2 {
-            border-bottom-color: #d4a83a;
-            color: #e6c87a;
+            border-bottom-color: #3a3a3a;
+            color: #e0e0e0;
         }
 
         /* header */
@@ -152,48 +151,64 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
             padding: 12px 24px;
             background: #ffffff;
-            border-bottom: 1px solid #f5e6c8;
-            border-radius: 60px;
+            border-bottom: 1px solid #eaeaea;
+            border-radius: 80px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        body.dark .header {
+            background: #0d0d0d;
         }
         .logo {
-            font-size: 1.6rem;
-            font-weight: 550;
+            font-size: 1.7rem;
+            font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #b8860b;
-            border-right: 1.5px solid #f0d894;
-            padding-right: 22px;
+            color: #1a1a1a;
+            border-right: 1.5px solid #e0e0e0;
+            padding-right: 24px;
+        }
+        body.dark .logo {
+            color: #ffffff;
+            border-right-color: #333;
         }
 
         .header-actions {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             align-items: center;
         }
         .premium-btn {
-            background: #fffcf5;
-            border: 1px solid #f5e6c8;
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
             padding: 8px 22px;
             border-radius: 40px;
             font-size: 0.9rem;
             font-weight: 500;
-            color: #b8860b;
+            color: #1a1a1a;
             cursor: pointer;
             transition: all 0.2s ease;
             text-decoration: none;
             display: inline-block;
         }
         .premium-btn:hover {
-            background: #fef0da;
+            background: #eeeeee;
             transform: translateY(-1px);
+        }
+        body.dark .premium-btn {
+            background: #1a1a1a;
+            border-color: #333;
+            color: #e0e0e0;
+        }
+        body.dark .premium-btn:hover {
+            background: #2a2a2a;
         }
 
         /* кнопка тёмной темы */
         .theme-switch-btn {
-            background: #fef0da;
+            background: #f0f0f0;
             border: none;
             width: 44px;
             height: 44px;
@@ -202,8 +217,9 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: #b8860b;
+            color: #1a1a1a;
             font-size: 0;
+            transition: all 0.2s;
         }
         .theme-switch-btn svg {
             width: 24px;
@@ -213,8 +229,8 @@
             fill: none;
         }
         body.dark .theme-switch-btn {
-            background: #3a2e1a;
-            color: #f0d894;
+            background: #2a2a2a;
+            color: #f0f0f0;
         }
         .theme-switch-btn:hover {
             transform: scale(0.96);
@@ -222,45 +238,44 @@
 
         /* Hero 16:9 */
         .hero-premium {
-            background: linear-gradient(135deg, #fff5e6 0%, #fef0da 100%);
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
             width: 100%;
             aspect-ratio: 16 / 9;
-            margin: 20px 0 40px;
+            margin: 20px 0 48px;
             border-radius: 28px;
-            border: 1px solid #f5e6c8;
+            border: 1px solid #eaeaea;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         body.dark .hero-premium {
-            background: linear-gradient(135deg, #2a2418, #1f1a10);
-            border-color: #5c4a2e;
+            background: linear-gradient(135deg, #1a1a1a, #111111);
+            border-color: #2a2a2a;
         }
         .hero-premium::before {
             content: "premium collection";
             font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: 8px;
-            color: #c9a53b;
+            color: #999;
             text-transform: uppercase;
             opacity: 0.7;
         }
 
-        /* ----- СЕТКИ С БОЛЬШИМИ ОТСТУПАМИ ----- */
-        .product-grid, .tshirt-grid {
+        /* ----- СЕТКИ С БОЛЬШИМИ ОТСТУПАМИ И ЦЕНТРИРОВАНИЕМ ----- */
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 40px 30px;
-            margin: 30px 0 60px;
+            gap: 48px 32px;
+            margin: 32px 0 64px;
         }
 
-        /* карточки шопперов 3:4 — прежний размер, но с увеличенными отступами */
         .product-card {
             background: #ffffff;
             border-radius: 24px;
-            padding: 20px 18px 20px;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
-            border: 1px solid #f5e6c8;
+            padding: 20px 18px 22px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #ebebeb;
             aspect-ratio: 3 / 4;
             display: flex;
             flex-direction: column;
@@ -268,55 +283,57 @@
             width: 100%;
         }
         .product-card:hover {
-            box-shadow: 0 16px 28px -12px rgba(160, 120, 40, 0.15);
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
             transform: translateY(-3px);
+            border-color: #ddd;
         }
 
         .product-image {
-            background: #fffcf5;
+            background: #fbfbfb;
             aspect-ratio: 3 / 4;
             width: 100%;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             border-radius: 18px;
-            border: 1px solid #f5e6c8;
+            border: 1px solid #eee;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 300;
-            color: #c9a53b;
+            color: #aaa;
         }
         .product-title {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 6px;
             text-transform: uppercase;
-            color: #8b6914;
+            letter-spacing: 0.5px;
+            color: #222;
         }
         .product-meta {
             font-size: 0.75rem;
-            color: #a08246;
-            margin-bottom: 12px;
+            color: #888;
+            margin-bottom: 14px;
         }
 
         .price-tiers-vertical {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            font-size: 0.8rem;
+            gap: 8px;
+            font-size: 0.85rem;
             font-weight: 500;
-            background: #fffcf5;
-            padding: 10px 12px;
+            background: #fafafa;
+            padding: 12px 14px;
             border-radius: 18px;
-            border: 1px solid #f5e6c8;
+            border: 1px solid #eee;
             margin-top: auto;
         }
         .tier-item {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            border-bottom: 1px dashed #f0d894;
-            padding-bottom: 5px;
+            align-items: center;
+            border-bottom: 1px dashed #e0e0e0;
+            padding-bottom: 6px;
         }
         .tier-item:last-child {
             border-bottom: none;
@@ -324,25 +341,33 @@
         }
         .tier-label {
             font-weight: 500;
-            color: #a07d2e;
+            color: #666;
+            font-size: 0.8rem;
         }
         .tier-price {
-            font-weight: 600;
-            color: #b8860b;
+            font-weight: 700;
+            color: #1a1a1a;
             background: #ffffff;
-            padding: 0 6px;
+            padding: 2px 8px;
             border-radius: 20px;
+            font-size: 0.85rem;
         }
 
-        /* футболки */
+        /* Футболки — отдельный раздел с большим отступом от шопперов */
         .tshirt-section {
-            margin: 50px 0 60px;
+            margin: 80px 0 64px;
+        }
+        .tshirt-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px 32px;
+            margin-top: 32px;
         }
         .tshirt-card {
             background: #ffffff;
             border-radius: 24px;
-            padding: 20px 18px 20px;
-            border: 1px solid #f5e6c8;
+            padding: 20px 18px 22px;
+            border: 1px solid #ebebeb;
             aspect-ratio: 3 / 4;
             display: flex;
             flex-direction: column;
@@ -351,38 +376,39 @@
         }
         .tshirt-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 16px 28px -12px rgba(160, 120, 40, 0.15);
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+            border-color: #ddd;
         }
         .tshirt-image {
-            background: #fffcf5;
+            background: #fbfbfb;
             aspect-ratio: 3 / 4;
             width: 100%;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             border-radius: 18px;
-            border: 1px solid #f5e6c8;
+            border: 1px solid #eee;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.6rem;
-            color: #c9a53b;
+            font-size: 2.8rem;
+            color: #aaa;
         }
         .tshirt-title {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 6px;
             text-transform: uppercase;
-            color: #8b6914;
+            color: #222;
         }
         .tshirt-meta {
             font-size: 0.75rem;
-            color: #a08246;
-            margin-bottom: 12px;
+            color: #888;
+            margin-bottom: 14px;
         }
         .tshirt-price {
-            background: #fffcf5;
-            padding: 10px 12px;
+            background: #fafafa;
+            padding: 12px 14px;
             border-radius: 18px;
-            border: 1px solid #f5e6c8;
+            border: 1px solid #eee;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -390,34 +416,35 @@
         }
         .price-label {
             font-weight: 500;
-            color: #a07d2e;
+            color: #666;
             font-size: 0.8rem;
             text-transform: uppercase;
         }
         .tshirt-price-value {
             font-weight: 700;
             font-size: 1.2rem;
-            color: #b8860b;
+            color: #1a1a1a;
             background: #ffffff;
             padding: 2px 12px;
             border-radius: 30px;
         }
 
-        /* таблицы DTF — увеличены отступы между блоками */
+        /* таблицы DTF */
         .card-table-wrapper {
             background: #ffffff;
             border-radius: 28px;
-            border: 1px solid #f5e6c8;
-            padding: 20px 24px 24px;
+            border: 1px solid #ebebeb;
+            padding: 22px 26px 26px;
             margin-bottom: 32px;
+            transition: all 0.2s;
         }
         .services-section {
-            margin: 40px 0 30px;
+            margin: 48px 0 32px;
         }
         .table-group {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 36px;
         }
         .price-table {
             width: 100%;
@@ -426,31 +453,32 @@
         }
         .price-table th {
             text-align: left;
-            padding: 12px 8px 8px 8px;
-            font-weight: 550;
+            padding: 14px 10px 10px 10px;
+            font-weight: 600;
             text-transform: uppercase;
-            border-bottom: 2px solid #f0d894;
-            color: #b8860b;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e0e0e0;
+            color: #333;
         }
         .price-table td {
-            padding: 12px 8px;
-            border-bottom: 1px solid #f5e6c8;
+            padding: 12px 10px;
+            border-bottom: 1px solid #efefef;
         }
         .table-caption {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 500;
-            margin-bottom: 16px;
-            color: #c9a53b;
-            border-left: 4px solid #f0d894;
-            padding-left: 12px;
+            margin-bottom: 18px;
+            color: #444;
+            border-left: 4px solid #ccc;
+            padding-left: 14px;
         }
         .highlight-note {
-            margin-top: 24px;
+            margin-top: 28px;
             font-size: 0.9rem;
-            padding: 12px 24px;
-            border-radius: 40px;
-            border: 1px solid #f5e6c8;
-            background: #fffcf5;
+            padding: 12px 26px;
+            border-radius: 60px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
             display: inline-block;
         }
 
@@ -458,33 +486,33 @@
         .examples-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
-            margin: 40px 0 50px;
+            gap: 28px;
+            margin: 48px 0 56px;
         }
         .example-square {
             aspect-ratio: 1/1;
-            background: #fffcf5;
+            background: #fafafa;
             border-radius: 20px;
-            border: 1px solid #f5e6c8;
+            border: 1px solid #ebebeb;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: #c9a53b;
+            color: #aaa;
             transition: all 0.2s;
         }
         .example-square:hover {
             transform: scale(1.02);
-            border-color: #f0d894;
+            border-color: #ccc;
         }
 
         /* контакты */
         .contact-block {
-            margin: 48px 0 20px;
-            padding: 20px 28px;
+            margin: 56px 0 24px;
+            padding: 24px 32px;
             border-radius: 32px;
-            border: 1px solid #f5e6c8;
-            background: #fffcf5;
+            border: 1px solid #ebebeb;
+            background: #fefefe;
         }
         .contact-row {
             display: flex;
@@ -497,8 +525,8 @@
             font-weight: 520;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            border-bottom: 1.5px solid #f0d894;
-            padding-bottom: 5px;
+            border-bottom: 1.5px solid #e0e0e0;
+            padding-bottom: 6px;
             cursor: pointer;
             text-decoration: none;
             color: inherit;
@@ -508,40 +536,51 @@
             opacity: 0.7;
         }
         .address {
-            margin-top: 20px;
+            margin-top: 22px;
             font-size: 0.9rem;
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #a08246;
-            border-top: 1px solid #f5e6c8;
-            padding-top: 16px;
+            color: #888;
+            border-top: 1px solid #eaeaea;
+            padding-top: 18px;
         }
         .footer-note {
-            margin-top: 24px;
+            margin-top: 28px;
             font-size: 0.75rem;
             text-align: right;
             letter-spacing: 2px;
-            color: #c9a53b;
+            color: #aaa;
         }
 
-        /* адаптив с сохранением отступов */
-        @media (max-width: 1100px) {
+        /* Адаптив с плавным переходом */
+        @media (max-width: 1200px) {
+            .page {
+                padding: 30px 36px 42px;
+            }
             .product-grid, .tshirt-grid {
-                gap: 30px 25px;
+                gap: 36px 28px;
             }
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
+            .product-grid, .tshirt-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+            .examples-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 800px) {
+            .page {
+                padding: 24px 28px 36px;
+            }
             .product-grid, .tshirt-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
             .examples-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-            .page {
-                padding: 28px 30px 40px;
             }
         }
         @media (max-width: 600px) {
@@ -550,15 +589,20 @@
             }
             .product-grid, .tshirt-grid {
                 grid-template-columns: 1fr;
-                gap: 28px;
+                gap: 32px;
+                max-width: 380px;
+                margin-left: auto;
+                margin-right: auto;
             }
             .examples-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             .header {
                 flex-direction: column;
                 align-items: stretch;
-                gap: 12px;
+                gap: 14px;
+                border-radius: 40px;
             }
             .header-actions {
                 justify-content: flex-end;
@@ -566,6 +610,9 @@
             .hero-premium::before {
                 font-size: 1rem;
                 letter-spacing: 4px;
+            }
+            .contact-row {
+                gap: 24px;
             }
         }
     </style>
@@ -588,7 +635,7 @@
 
     <div class="hero-premium"></div>
 
-    <!-- Шопперы -->
+    <!-- Шопперы — 7 штук, выровнены по сетке -->
     <h2>Шопперы · база</h2>
     <div class="product-grid">
         <div class="product-card"><div class="product-image">▣</div><div class="product-title">Бежевый / Саржа</div><div class="product-meta">40×34 см | 140 г/м²</div><div class="price-tiers-vertical"><div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">185 ₽</span></div><div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">165 ₽</span></div><div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">145 ₽</span></div></div></div>
@@ -600,7 +647,7 @@
         <div class="product-card"><div class="product-image">⬚</div><div class="product-title">Бежевый Диагональ</div><div class="product-meta">40×34 см | премиум ткань</div><div class="price-tiers-vertical"><div class="tier-item"><span class="tier-label">1–300 шт</span><span class="tier-price">205 ₽</span></div><div class="tier-item"><span class="tier-label">300–500 шт</span><span class="tier-price">182 ₽</span></div><div class="tier-item"><span class="tier-label">500–1000 шт</span><span class="tier-price">162 ₽</span></div></div></div>
     </div>
 
-    <!-- Футболки -->
+    <!-- Футболки — отдельный раздел с увеличенным отступом сверху -->
     <div class="tshirt-section">
         <h2>Футболки · опт</h2>
         <div class="tshirt-grid">
